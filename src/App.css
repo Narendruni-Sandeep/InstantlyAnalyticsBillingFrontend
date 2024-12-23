@@ -1,0 +1,123 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+h2, h3 {
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.dashboard, .success-page, .cancel-page {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.billing-details, .billing-history {
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #f1f1f1;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px 0;
+  font-size: 16px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button.btn-cancel {
+  background-color: #dc3545;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+.billing-history-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.billing-history-table th, .billing-history-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.billing-history-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.billing-history-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.btn-invoice {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-invoice:hover {
+  background-color: #0056b3;
+}
+.billing-history {
+  overflow-x: auto; /* Enable horizontal scrolling if content overflows */
+}
+
+.billing-history-table {
+  width: 100%; /* Ensure the table takes the full width of the container */
+  border-collapse: collapse;
+  table-layout: fixed; /* Enforce fixed column widths to prevent overflow */
+}
+
+.billing-history-table th, .billing-history-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  word-wrap: break-word; /* Wrap long text within cells */
+  overflow-wrap: break-word; /* Ensure long words break */
+}
+
+.billing-history-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.billing-history-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
