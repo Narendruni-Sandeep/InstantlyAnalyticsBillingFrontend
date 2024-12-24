@@ -11,9 +11,9 @@ const BillingDetails = ({ details }) => {
     <div className="billing-details">
       <h3>Billing Details</h3>
       <p>Status: {details.subscriptionStatus || "Not Available"}</p>
-      <p>Subscription Billing Status: {details.subscriptionBilling}</p>
-      <p>Start Date: {formatDate(details.subscriptionStartDate)}</p>
-      <p>End Date: {formatDate(details.subscriptionEndDate)}</p>
+      <p>Subscription Billing Status: {details.subscriptionBillingStatus}</p>
+      <p>Start Date: {formatDate(details.currentPeriodStart)}</p>
+      <p>End Date: {formatDate(details.currentPeriodEnd)}</p>
     </div>
   );
 };

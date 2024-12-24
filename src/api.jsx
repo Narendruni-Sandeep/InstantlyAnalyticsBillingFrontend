@@ -3,10 +3,10 @@ import axios from "axios";
 const API_BASE_URL = process.env.REACT_APP_API_KEY;
 
 // Fetch billing details
-export const getBillingDetails = async (userId) => {
+export const getBillingDetails = async (id) => {
   try {
     const response = await axios.get(`${API_BASE_URL}/users/billing`, {
-      params: { userId },
+      params: { id },
     });
     return response.data;
   } catch (error) {

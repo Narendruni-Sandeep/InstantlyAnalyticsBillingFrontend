@@ -10,7 +10,7 @@ import BillingHistory from "../components/BillingHistory";
 import SubscriptionButton from "../components/SubscriptionButton";
 
 const Dashboard = () => {
-  const { userId } = useParams(); // Get userId from the URL
+  const { id } = useParams(); // Get userId from the URL
   const [billingDetails, setBillingDetails] = useState(null);
   const [billingHistory, setBillingHistory] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -19,7 +19,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const details = await getBillingDetails(userId);
+        const details = await getBillingDetails(id);
         setBillingDetails(details);
         
         // Use the email from billingDetails to fetch history
@@ -37,10 +37,10 @@ const Dashboard = () => {
       }
     };
   
-    if (userId) {
+    if (id) {
       fetchData();
     }
-  }, [userId]);
+  }, [id]);
   
 
   const stripePaymentLink = "https://buy.stripe.com/test_aEU1552TmaWzdQQ8ww"; // Your Stripe Payment Link
@@ -52,7 +52,7 @@ const handleSubscribe = () => {
     // Build Stripe payment link with query parameters
     const paymentUrl = `${stripePaymentLink}?prefilled_email=${encodeURIComponent(
       email
-    )}&userId=${userId}`;
+    )}&userId=${id}`;
 
     // Redirect to the Stripe Payment Link
     window.open(paymentUrl, "_blank");
@@ -90,7 +90,7 @@ const handleSubscribe = () => {
     }
   };
 
-  if (!userId) {
+  if (!id) {
     return <div>Error: User ID is not provided in the URL.</div>;
   }
 
